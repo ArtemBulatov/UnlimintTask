@@ -31,7 +31,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\src\main\java\ru\bulatov\unlimintTask\FilesParser.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\src\main\java\ru\bulatov\unlimintTask\MainParse.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\ru\bulatov\unlimintTask\typesOfParse\CsvParser.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\ru\bulatov\unlimintTask\typesOfParse\JsonParser.java">
           <value>
             <Attribute>
               <option name="separator" value=";" />

@@ -1,12 +1,15 @@
 package ru.bulatov.unlimintTask;
 
+import org.springframework.stereotype.Component;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-public class OutString {       // строка выходных данных
+
+public class OutString {       // строка для выходных данных
 
     private int id = 0;              // - идентификатор ордера
-    private double amount = 0;          // - сумма ордера
+    private double amount = 0;       // - сумма ордера
     private String currency = "";    // - валюта суммы ордера
     private String comment = "";     // - комментарий по ордеру
     private String filename = "";    // имя исходного файла
