@@ -1,7 +1,5 @@
 package ru.bulatov.unlimintTask;
 
-import org.springframework.stereotype.Component;
-
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -15,12 +13,6 @@ public class OutString {       // строка для выходных данн�
     private String filename = "";    // имя исходного файла
     private int line = 0;            // - номер строки исходного файла
     private String result = "OK";    // - результат парсинга записи исходного файла. ОК - по умолчанию.
-
-    public OutString(String filename, int line, String result) {
-        this.filename = filename;
-        this.line = line;
-        this.result = result;
-    }
 
     public OutString(int id, String amount, String currency, String comment, String filename, int line) {
         this.id = id;

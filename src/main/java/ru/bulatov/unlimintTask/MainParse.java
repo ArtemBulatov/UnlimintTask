@@ -17,16 +17,16 @@ public class MainParse {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
                 SpringConfig.class
         );
-/*
-        String fileName1 = "src/main/java/ru/bulatov/unlimintTask/TestFile1.csv";
-        String fileName2 = "src/main/java/ru/bulatov/unlimintTask/TestFile2.csv";
-        String fileName3 = "src/main/java/ru/bulatov/unlimintTask/testFile1.json";
-        String fileName4 = "src/main/java/ru/bulatov/unlimintTask/testFile2.json";
+
+        String fileName1 = "src/test/java/testFiles/TestFile1.csv";
+        String fileName2 = "src/test/java/testFiles/testFile1.json";
+        String fileName3 = "src/test/java/testFiles/TestFile2.csv";
+        String fileName4 = "src/test/java/testFiles/testFile2.json";
 
         String[] argsTest = {fileName1, fileName3, fileName2, fileName4};
-*/
+
         List<FilesParser> parsers = new ArrayList<>();
-        for (String fileName : args) {
+        for (String fileName : argsTest) {
             FilesParser parser = context.getBean("filesParser", FilesParser.class);
             parser.setFileName(fileName);
             parser.start();
