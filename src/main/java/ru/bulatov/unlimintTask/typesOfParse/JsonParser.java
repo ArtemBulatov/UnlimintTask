@@ -1,13 +1,14 @@
 package ru.bulatov.unlimintTask.typesOfParse;
 
 import com.google.gson.Gson;
+import org.springframework.stereotype.Component;
 import ru.bulatov.unlimintTask.MainParse;
 import ru.bulatov.unlimintTask.OutString;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-
+@Component
 public class JsonParser extends Thread {
 
     private final String fileName;

@@ -9,10 +9,6 @@ public class CSVfile implements File{
         this.fileName = fileName;
     }
 
-    public String getFileName() {
-        return fileName;
-    }
-
     @Override
     public Map<Integer, String> fileStrings() {
         return null;
