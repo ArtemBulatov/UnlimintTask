@@ -1,10 +1,12 @@
+package ru.bulatov.unlimintTask;
 
-// строка выходных данных
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
-public class OutString {
+public class OutString {       // строка выходных данных
 
     private int id = 0;              // - идентификатор ордера
-    private int amount = 0;          // - сумма ордера
+    private double amount = 0;          // - сумма ордера
     private String currency = "";    // - валюта суммы ордера
     private String comment = "";     // - комментарий по ордеру
     private String filename = "";    // имя исходного файла
@@ -17,16 +19,10 @@ public class OutString {
         this.result = result;
     }
 
-    public OutString(String id, String amount, String currency, String comment, String filename, int line) {
+    public OutString(int id, String amount, String currency, String comment, String filename, int line) {
+        this.id = id;
         try {
-            this.id = Integer.parseInt(id);
-        }
-        catch (NumberFormatException exception) {
-            result = "NumberFormatException: " + "поле id должно быть числом!";
-        }
-
-        try {
-            this.amount = Integer.parseInt(amount);
+            this.amount = Double.parseDouble(amount);
         }
         catch (NumberFormatException exception) {
             result = "NumberFormatException: " + "поле amount должно быть числом!";
@@ -39,9 +35,10 @@ public class OutString {
 
     @Override
     public String toString() {
+        NumberFormat nf = new DecimalFormat("#.######");
         return "{" +
                 "\"id\":" + id +
-                ", \"amount\":" + amount +
+                ", \"amount\":" + nf.format(amount) +
                 ", \"comment\":\"" + comment + '\"' +
                 ", \"filename\":\"" + filename + '\"' +
                 ", \"line\":" + line +
