@@ -6,17 +6,24 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-public class CsvParser extends Thread {
+public class CsvParser {
 
-    private final String fileName;
+    private String fileName;
 
     public CsvParser(String fileName) {
         this.fileName = fileName;
     }
 
-    @Override
-    public synchronized void run() {
-        System.out.println("CsvParser. Начало работы потока " + getName());
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public void parse() {
+        System.out.println("CsvParser. Начало парсинга файла " + getFileName());
         int numLine = 1;    // переменная для подсчёта строк в файле
 
         try {
@@ -25,7 +32,7 @@ public class CsvParser extends Thread {
             while (reader.ready()) {
                 String[] s = reader.readLine().split(",");
                 int id = Integer.parseInt(s[0]);
-                MainParse.resultStrings.put(id, new OutString(id, s[1], s[2], s[3], fileName, numLine));
+                MainParse.resultStrings.put(id, new OutString(id, s[1], s[2], s[3], getFileName(), numLine));
                 numLine++;
             }
             reader.close();
@@ -33,7 +40,8 @@ public class CsvParser extends Thread {
         catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Поток " + getName() +  " завершил работу.");
+
+        System.out.println("Парсинг файла " + getFileName() +  " завершён.");
     }
 
 }

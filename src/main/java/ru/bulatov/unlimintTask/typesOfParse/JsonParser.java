@@ -8,17 +8,24 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-public class JsonParser extends Thread {
+public class JsonParser {
 
-    private final String fileName;
+    private String fileName;
 
     public JsonParser(String fileName) {
         this.fileName = fileName;
     }
 
-    @Override
-    public synchronized void run() {
-        System.out.println("JsonParser. Начало работы потока " + getName());
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public void parse() {
+        System.out.println("JsonParser. Начало парсинга файла " + getFileName());
         int numLine = 1; // переменная для подсчёта строк в файле
 
         Gson gson = new Gson();
@@ -28,7 +35,7 @@ public class JsonParser extends Thread {
             while (reader.ready()) {
                 js = gson.fromJson(reader.readLine(), JsonString.class);
                 int id = Integer.parseInt(js.getOrderId());
-                MainParse.resultStrings.put(id, new OutString(id, js.getAmount(), js.getCurrency(), js.getComment(), fileName, numLine));
+                MainParse.resultStrings.put(id, new OutString(id, js.getAmount(), js.getCurrency(), js.getComment(), getFileName(), numLine));
                 numLine++;
             }
             reader.close();
@@ -36,6 +43,6 @@ public class JsonParser extends Thread {
         catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Поток " + getName() +  " завершил работу.");
+        System.out.println("Парсинг файла " + getFileName() +  " завершён.");
     }
 }
