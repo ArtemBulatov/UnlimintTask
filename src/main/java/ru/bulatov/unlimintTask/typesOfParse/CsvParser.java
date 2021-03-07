@@ -1,4 +1,5 @@
 package ru.bulatov.unlimintTask.typesOfParse;
+
 import ru.bulatov.unlimintTask.OutString;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,17 +8,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class CsvParser {
+public class CsvParser {    // класс для парсинга файлов типа scv
 
     private String csvFileName;
-    private final Map<Integer, OutString> outStringMap = new HashMap<>();
+    private final Map<Integer, OutString> outStringMap = new HashMap<>(); // хранит данные из одного файла в готовом для вывода виде
 
     public void setCsvFileName(String csvFileName) {
         this.csvFileName = csvFileName;
     }
 
+    // метод возвращает данные
     public Map<Integer, OutString> getOutStrings() {
-        System.out.println("CsvParser. Начало парсинга файла " + csvFileName);
+
         int numLine = 1;    // переменная для подсчёта строк в файле
 
         try {
@@ -26,7 +28,8 @@ public class CsvParser {
             while (reader.ready()) {
                 String[] s = reader.readLine().split(",");
                 int id = Integer.parseInt(s[0]);
-                outStringMap.put(id, new OutString(id, s[1], s[2], s[3], csvFileName, numLine));
+                OutString outString = new OutString(id, s[1], s[2], s[3], csvFileName, numLine); // создание строки в формате готовом для вывода
+                outStringMap.put(id, outString);
                 numLine++;
             }
             reader.close();
@@ -35,7 +38,6 @@ public class CsvParser {
             e.printStackTrace();
         }
 
-        System.out.println("Парсинг файла " + csvFileName +  " завершён.");
         return outStringMap;
     }
 

@@ -8,9 +8,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class MainParse {
+public class ParseApp {
 
-    public final static Map<Integer, OutString> resultStrings = new TreeMap<>();   // готовые выходные данные
+    // готовые выходные данные сохраняются в TreeMap, чтобы быть отсортированными по id
+    public final static Map<Integer, OutString> resultStrings = new TreeMap<>();
 
     public static void main(String[] args) {
 
@@ -18,15 +19,9 @@ public class MainParse {
                 SpringConfig.class
         );
 
-        String fileName1 = "src/test/java/testFiles/TestFile1.csv";
-        String fileName2 = "src/test/java/testFiles/testFile1.json";
-        String fileName3 = "src/test/java/testFiles/TestFile2.csv";
-        String fileName4 = "src/test/java/testFiles/testFile2.json";
-
-        String[] argsTest = {fileName1, fileName3, fileName2, fileName4};
-
-        List<FilesParser> parsers = new ArrayList<>();
-        for (String fileName : argsTest) {
+        List<FilesParser> parsers = new ArrayList<>();  // лист для сохранения ссылок на объекты парсинга.
+                                                        // нужен, чтобы потом можно былоо подождать завершения парсинга
+        for (String fileName : args) {
             FilesParser parser = context.getBean("filesParser", FilesParser.class);
             parser.setFileName(fileName);
             parser.start();
@@ -35,14 +30,14 @@ public class MainParse {
 
         try {
             for(FilesParser parser : parsers) {
-                parser.join();
+                parser.join();                  // ожидаем завершения всех потоков парсинга
             }
         }
         catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        System.out.println("");
+        // вывод данных
         for(int i : resultStrings.keySet()) {
             System.out.println(resultStrings.get(i));
         }
