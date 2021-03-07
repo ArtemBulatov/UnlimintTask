@@ -25,11 +25,11 @@ public class FilesParser extends Thread{
 
         if (fileType.equals("json")) {
             jsonParser.setJsonFileName(fileName);
-            MainParse.resultStrings.putAll(jsonParser.getOutStrings());
+            ParseApp.resultStrings.putAll(jsonParser.getOutStrings());
         }
         else if (fileType.equals("csv")) {
             csvParser.setCsvFileName(fileName);
-            MainParse.resultStrings.putAll(csvParser.getOutStrings());
+            ParseApp.resultStrings.putAll(csvParser.getOutStrings());
         }
         else {
             System.out.println(fileName + " - этот тип файлов пока не поддерживается данной программой.");
