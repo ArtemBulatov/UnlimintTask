@@ -19,7 +19,7 @@ public class FilesParser extends Thread{
     }
 
     @Override
-    public synchronized void run() {
+    public void run() {
         String[] strArr = fileName.split("\\.");
         String fileType = strArr[strArr.length - 1];
 

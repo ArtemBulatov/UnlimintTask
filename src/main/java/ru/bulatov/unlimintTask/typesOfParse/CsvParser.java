@@ -17,7 +17,6 @@ public class CsvParser {
     }
 
     public Map<Integer, OutString> getOutStrings() {
-        System.out.println("CsvParser. Начало парсинга файла " + csvFileName);
         int numLine = 1;    // переменная для подсчёта строк в файле
 
         try {
@@ -35,7 +34,6 @@ public class CsvParser {
             e.printStackTrace();
         }
 
-        System.out.println("Парсинг файла " + csvFileName +  " завершён.");
         return outStringMap;
     }
 

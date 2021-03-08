@@ -10,23 +10,23 @@ import java.util.TreeMap;
 
 public class MainParse {
 
-    public final static Map<Integer, OutString> resultStrings = new TreeMap<>();   // готовые выходные данные
+    public static volatile Map<Integer, OutString> resultStrings = new TreeMap<>();   // готовые выходные данные
 
     public static void main(String[] args) {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
                 SpringConfig.class
         );
-
-        String fileName1 = "src/test/java/testFiles/TestFile1.csv";
-        String fileName2 = "src/test/java/testFiles/testFile1.json";
-        String fileName3 = "src/test/java/testFiles/TestFile2.csv";
-        String fileName4 = "src/test/java/testFiles/testFile2.json";
+/*
+        String fileName1 = "C:/Users/artem/IdeaProjects/testFiles/TestFile1.csv";
+        String fileName2 = "C:/Users/artem/IdeaProjects/testFiles/testFile1.json";
+        String fileName3 = "C:/Users/artem/IdeaProjects/testFiles/TestFile2.csv";
+        String fileName4 = "C:/Users/artem/IdeaProjects/testFiles/testFile2.json";
 
         String[] argsTest = {fileName1, fileName3, fileName2, fileName4};
-
+*/
         List<FilesParser> parsers = new ArrayList<>();
-        for (String fileName : argsTest) {
+        for (String fileName : args) {
             FilesParser parser = context.getBean("filesParser", FilesParser.class);
             parser.setFileName(fileName);
             parser.start();

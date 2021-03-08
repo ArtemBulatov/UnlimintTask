@@ -21,7 +21,6 @@ public class JsonParser {
     }
 
     public Map<Integer, OutString> getOutStrings() {
-        System.out.println("JsonParser. Начало парсинга файла " + jsonFileName);
         int numLine = 1; // переменная для подсчёта строк в файле
 
         Gson gson = new Gson();
@@ -39,7 +38,6 @@ public class JsonParser {
         catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Парсинг файла " + jsonFileName +  " завершён.");
         return outStringMap;
     }
 

@@ -1,0 +1,42 @@
+<component name="libraryTable">
+  <library name="LibericaJDK-8-Full">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/ArcTest" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/BarChart" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/Blink" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/CardTest" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/Clock" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/DitherTest" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/DrawTest" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/Fractal" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/GraphicsTest" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/MoleculeViewer" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/NervousText" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/SimpleGraph" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/SortDemo" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/SpreadSheet" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/applets/WireFrame" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/demo/nio/zipfs" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/annotations/DependencyChecker/PluginChecker/src" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/annotations/DependencyChecker/Plugins/src" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/annotations/Validator/src" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/forkjoin/mergesort" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/jmx/jmx-scandir/src" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/jmx/jmx-scandir/test" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/lambda/BulkDataOperations/src" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/lambda/DefaultMethods" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/nio/chatserver" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/nio/file" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/nio/multicast" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/nio/server" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/scripting/scriptpad/src" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full/sample/try-with-resources/src" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../Program Files/BellSoft/LibericaJDK-8-Full" recursive="false" type="SOURCES" />
+  </library>
+</component>
