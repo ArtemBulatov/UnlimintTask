@@ -9,9 +9,9 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-
     </properties>
 
     <dependencies>
@@ -63,6 +63,59 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <finalName>UnlimintTask</finalName>
+
+        <plugins>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>single</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <descriptorRefs>
+                            <descriptorRef>jar-with-dependencies</descriptorRef>
+                        </descriptorRefs>
+                        <archive>
+                            <manifest>
+
+                                <!-- указываем класс с методом main -->
+                                <mainClass>ru.bulatov.unlimintTask.MainParse</mainClass>
+
+                                <!-- Указываем дополнительный каталог, который нужно включить в classpath -->
+
+                                <addClasspath>true</addClasspath>
+                                <classpathPrefix>ru.bulatov.unlimintTask.config</classpathPrefix>
+
+                                <addClasspath>true</addClasspath>
+                                <classpathPrefix>ru.bulatov.unlimintTask.typesOfParse</classpathPrefix>
+                            </manifest>
+
+                        </archive>
+                    </configuration>
+                </plugin>
+
+            <plugin>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+            </plugin>
+
+            </plugins>
+
+    </build>
+
 
 
 </project>

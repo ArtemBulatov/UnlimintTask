@@ -3,11 +3,15 @@ package ru.bulatov.unlimintTask;
 import ru.bulatov.unlimintTask.typesOfParse.CsvParser;
 import ru.bulatov.unlimintTask.typesOfParse.JsonParser;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FilesParser extends Thread{
 
     private String fileName;
     private CsvParser csvParser;
     private JsonParser jsonParser;
+    private Map<Integer, OutString> outStringsFromFile = new HashMap<>();
 
     public FilesParser(CsvParser csvParser, JsonParser jsonParser) {
         this.csvParser = csvParser;
@@ -18,21 +22,30 @@ public class FilesParser extends Thread{
         this.fileName = fileName;
     }
 
+    public Map<Integer, OutString> getOutStringsFromFile() {
+        return outStringsFromFile;
+    }
+
     @Override
-    public synchronized void run() {
+    public void run() {
         String[] strArr = fileName.split("\\.");
         String fileType = strArr[strArr.length - 1];
 
-        if (fileType.equals("json")) {
-            jsonParser.setJsonFileName(fileName);
-            ParseApp.resultStrings.putAll(jsonParser.getOutStrings());
+        switch (fileType) {
+            case "json":
+                jsonParser.setJsonFileName(fileName);
+                outStringsFromFile.putAll(jsonParser.getOutStrings());
+                break;
+
+            case "csv":
+                csvParser.setCsvFileName(fileName);
+                outStringsFromFile.putAll(csvParser.getOutStrings());
+                break;
+
+            default:
+                System.out.println(fileName + " - этот тип файлов пока не поддерживается данной программой.");
+                break;
         }
-        else if (fileType.equals("csv")) {
-            csvParser.setCsvFileName(fileName);
-            ParseApp.resultStrings.putAll(csvParser.getOutStrings());
-        }
-        else {
-            System.out.println(fileName + " - этот тип файлов пока не поддерживается данной программой.");
-        }
+
     }
 }

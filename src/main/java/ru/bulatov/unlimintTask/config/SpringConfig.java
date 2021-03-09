@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Scope;
 import ru.bulatov.unlimintTask.FilesParser;
 import ru.bulatov.unlimintTask.typesOfParse.CsvParser;
 import ru.bulatov.unlimintTask.typesOfParse.JsonParser;
+import ru.bulatov.unlimintTask.typesOfParse.JsonString;
 
 @Configuration
 public class SpringConfig {
@@ -18,8 +19,14 @@ public class SpringConfig {
 
     @Bean
     @Scope("prototype")
+    public JsonString jsonString() {
+        return new JsonString();
+    }
+
+    @Bean
+    @Scope("prototype")
     public JsonParser jsonParser(){
-        return new JsonParser();
+        return new JsonParser(jsonString());
     }
 
     @Bean

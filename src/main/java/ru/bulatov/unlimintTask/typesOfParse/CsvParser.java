@@ -8,18 +8,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class CsvParser {    // класс для парсинга файлов типа scv
+public class CsvParser {
 
     private String csvFileName;
-    private final Map<Integer, OutString> outStringMap = new HashMap<>(); // хранит данные из одного файла в готовом для вывода виде
 
     public void setCsvFileName(String csvFileName) {
         this.csvFileName = csvFileName;
     }
 
-    // метод возвращает данные
     public Map<Integer, OutString> getOutStrings() {
-
+        Map<Integer, OutString> outStringMap = new HashMap<>();
         int numLine = 1;    // переменная для подсчёта строк в файле
 
         try {
@@ -28,8 +26,7 @@ public class CsvParser {    // класс для парсинга файлов �
             while (reader.ready()) {
                 String[] s = reader.readLine().split(",");
                 int id = Integer.parseInt(s[0]);
-                OutString outString = new OutString(id, s[1], s[2], s[3], csvFileName, numLine); // создание строки в формате готовом для вывода
-                outStringMap.put(id, outString);
+                outStringMap.put(id, new OutString(id, s[1], s[2], s[3], csvFileName, numLine));
                 numLine++;
             }
             reader.close();
@@ -37,7 +34,6 @@ public class CsvParser {    // класс для парсинга файлов �
         catch (IOException e) {
             e.printStackTrace();
         }
-
         return outStringMap;
     }
 
