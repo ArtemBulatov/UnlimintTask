@@ -1,4 +1,5 @@
 package ru.bulatov.unlimintTask.typesOfParse;
+
 import ru.bulatov.unlimintTask.OutString;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,13 +11,13 @@ import java.util.Map;
 public class CsvParser {
 
     private String csvFileName;
-    private final Map<Integer, OutString> outStringMap = new HashMap<>();
 
     public void setCsvFileName(String csvFileName) {
         this.csvFileName = csvFileName;
     }
 
     public Map<Integer, OutString> getOutStrings() {
+        Map<Integer, OutString> outStringMap = new HashMap<>();
         int numLine = 1;    // переменная для подсчёта строк в файле
 
         try {
@@ -33,7 +34,6 @@ public class CsvParser {
         catch (IOException e) {
             e.printStackTrace();
         }
-
         return outStringMap;
     }
 

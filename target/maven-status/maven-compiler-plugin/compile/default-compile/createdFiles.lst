@@ -1,7 +1,7 @@
 ru\bulatov\unlimintTask\config\SpringConfig.class
 ru\bulatov\unlimintTask\MainParse.class
 ru\bulatov\unlimintTask\OutString.class
+ru\bulatov\unlimintTask\typesOfParse\JsonString.class
 ru\bulatov\unlimintTask\FilesParser.class
 ru\bulatov\unlimintTask\typesOfParse\CsvParser.class
-ru\bulatov\unlimintTask\typesOfParse\JsonParser$JsonString.class
 ru\bulatov\unlimintTask\typesOfParse\JsonParser.class
