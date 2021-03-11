@@ -4,6 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Inherit defaults from Spring Boot -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.4.RELEASE</version>
+    </parent>
+
     <groupId>org.example</groupId>
     <artifactId>UnlimintTask</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -62,64 +69,22 @@
 
         <plugins>
 
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>2.4</version>
-                    <configuration>
-                        <archive>
-                            <manifest>
-
-                                <mainClass>ru.bulatov.unlimintTask.MainParse</mainClass>
-
-                                <addClasspath>true</addClasspath>
-                                <classpathPrefix>ru.bulatov.unlimintTask.config</classpathPrefix>
-
-                                <addClasspath>true</addClasspath>
-                                <classpathPrefix>ru.bulatov.unlimintTask.typesOfParse</classpathPrefix>
-
-
-                            </manifest>
-
-                        </archive>
-                    </configuration>
-
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>single</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <descriptorRefs>
-                            <descriptorRef>jar-with-dependencies</descriptorRef>
-                        </descriptorRefs>
-                        <archive>
-                            <manifest>
-
-                                <!-- указываем класс с методом main -->
-                                <mainClass>ru.bulatov.unlimintTask.MainParse</mainClass>
-
-                                <!-- Указываем дополнительный каталог, который нужно включить в classpath -->
-
-                                <addClasspath>true</addClasspath>
-                                <classpathPrefix>ru.bulatov.unlimintTask.config</classpathPrefix>
-
-                                <addClasspath>true</addClasspath>
-                                <classpathPrefix>ru.bulatov.unlimintTask.typesOfParse</classpathPrefix>
-                            </manifest>
-
-                        </archive>
-                    </configuration>
-                </plugin>
-
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.2.4.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>spring-boot</classifier>
+                            <mainClass>ru.bulatov.unlimintTask.MainParse</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             </plugins>
 
     </build>
